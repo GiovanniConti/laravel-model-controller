@@ -7,9 +7,11 @@ use App\Movie;
 
 class HomeController extends Controller {
   function index() {
-    $movies = Movie::all();
-    dump($movies);
+    $movies_list = Movie::all();
+    dump($movies_list);
 
-    return view('home.index');
+    return view('home.index', [
+      "movies" => $movies_list
+    ]);
   }
 }
